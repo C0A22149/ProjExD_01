@@ -43,7 +43,7 @@ def main():
         screen.blit(kouk_imgs_2[x_tori], [300,200])
         pg.display.update()
         tmr += 1        
-        clock.tick(1000)
+        clock.tick(100)
 
 
 if __name__ == "__main__":

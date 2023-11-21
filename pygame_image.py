@@ -9,6 +9,8 @@ def main():
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
     kouk_img = pg.image.load("ex01/fig/3.png")
     kouk_img_gyaku = pg.transform.flip(kouk_img,True,False)
+    kouk_img_2 = pg.transform.rotozoom(kouk_img_gyaku,10,1.0)
+    kouk_imgs = [kouk_img_gyaku,kouk_img_2]
     tmr = 0
     while True:
         for event in pg.event.get():

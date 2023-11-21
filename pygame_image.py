@@ -12,15 +12,19 @@ def main():
     kouk_img_2 = pg.transform.rotozoom(kouk_img_gyaku,10,1.0)
     kouk_imgs = [kouk_img_gyaku,kouk_img_2]
     tmr = 0
+    x = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
-        screen.blit(bg_img, [0, 0])
+        x += 1
+        if x >= 1600:
+            x = 0
+        screen.blit(bg_img, [-x, 0])
+        screen.blit(bg_img,[1600-x,0])
         screen.blit(kouk_imgs[tmr%2], [300,200])
         pg.display.update()
         tmr += 1        
-        clock.tick(10)
+        clock.tick(100)
 
 
 if __name__ == "__main__":
